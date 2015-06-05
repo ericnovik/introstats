@@ -19,6 +19,7 @@ ggplot_it <- function(n = 100) {
   ggplot2::qplot(x)
 }
 
+
 #table_1_1 <- read.csv("~/Google Drive/Statistics with R Book/prod/01-chapter/table_1-1.csv", stringsAsFactors = FALSE)
 #table_1_4 <- read.csv("~/Google Drive/Statistics with R Book/prod/01-chapter/table_1-4.csv", stringsAsFactors = FALSE)
 
