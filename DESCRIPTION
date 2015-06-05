@@ -1,0 +1,14 @@
+Package: introstats
+Type: Package
+Title: Data and Functions for Statisitcs With R Book by Stinerock and Novik
+Version: 0.1
+Date: 2015-05-29
+Authors@R: as.person(c(
+    "Eric Novik <eric.novik@gmail.com> [aut, cre]",
+    "Robert Stinerock <robert.stinerock@gmail.com> [aut]"
+  ))
+Description: TBD; More about what it does.
+License: MIT
+LazyData: TRUE
+Imports:
+    ggplot2

@@ -1,0 +1,26 @@
+#' Prints hello
+#'
+#' @return Names of the authors.
+#' @examples
+#' hello()
+hello <- function() {
+  print("Hello, world, it is Stinerock and Novik!")
+}
+
+#' Plots a normal histogram
+#'
+#' @param n Number of random draws.
+#' @return Plots a histogram of n standard normals.
+#' @examples
+#' ggplot_it()
+#' ggplot_it(1000)
+ggplot_it <- function(n = 100) {
+  x <- rnorm(n)
+  ggplot2::qplot(x)
+}
+
+#table_1_1 <- read.csv("~/Google Drive/Statistics with R Book/prod/01-chapter/table_1-1.csv", stringsAsFactors = FALSE)
+#table_1_4 <- read.csv("~/Google Drive/Statistics with R Book/prod/01-chapter/table_1-4.csv", stringsAsFactors = FALSE)
+
+#devtools::use_data(table_1_4, table_1_1)
+
