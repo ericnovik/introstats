@@ -24,7 +24,12 @@ ggplot_it <- function(n = 100) {
 #' @examples
 #' update_package()
 update_package <- function() {
-  remove.packages("introstats")
+  if (suppressMessages(suppressWarnings(require("introstats")))) {
+    remove.packages("introstats")
+  }
+  if (!suppressMessages(suppressWarnings(require("devtools")))) {
+    install.packages("devtools")
+  }
   devtools::install_github("ericnovik/introstats")
 }
 
