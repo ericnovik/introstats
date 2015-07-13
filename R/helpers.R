@@ -46,3 +46,7 @@ update_package <- function() {
 # poverty <- read.csv("~/Documents/Rfiles/USdata.csv", stringsAsFactors = FALSE)
 # devtools::use_data(poverty)
 
+# exit <- read.csv("~/Downloads/exit.csv", stringsAsFactors = FALSE)
+# colnames(exit) <- 'obama'
+# exit$obama <- sample(exit$obama)
+# devtools::use_data(exit, overwrite = TRUE)
