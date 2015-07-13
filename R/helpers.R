@@ -33,7 +33,6 @@ update_package <- function() {
   devtools::install_github("ericnovik/introstats")
 }
 
-
 #table_1_1 <- read.csv("~/Google Drive/Statistics with R Book/prod/01-chapter/table_1-1.csv", stringsAsFactors = FALSE)
 #table_1_4 <- read.csv("~/Google Drive/Statistics with R Book/prod/01-chapter/table_1-4.csv", stringsAsFactors = FALSE)
 #devtools::use_data(table_1_4, table_1_1)
