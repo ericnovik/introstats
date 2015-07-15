@@ -1,24 +1,3 @@
-#' Prints hello
-#'
-#' @return Names of the authors.
-#' @examples
-#' hello()
-hello <- function() {
-  print("Hello, world, it is Stinerock and Novik!")
-}
-
-#' Plots a normal histogram
-#'
-#' @param n Number of random draws.
-#' @return Plots a histogram of n standard normals.
-#' @examples
-#' ggplot_it()
-#' ggplot_it(1000)
-ggplot_it <- function(n = 100) {
-  x <- rnorm(n)
-  ggplot2::qplot(x)
-}
-
 #' Updates the introstats pacakge from github
 #'
 #' @examples
@@ -32,6 +11,34 @@ update_package <- function() {
   }
   devtools::install_github("ericnovik/introstats")
 }
+
+#' Plots normal densities
+#'
+#' @param n_dens Number of densities to draw with standard deviations from 1 to n_dens
+#' @return ggplot2 plot object
+#' @examples
+#' plot_normals()
+#' plot_normals(5)
+plot_normals <- function (n_dens = 3) {
+  n <- 1000
+  x <- seq(-10, 10, length.out = n)
+  dens <- matrix(ncol = n_dens, nrow = n)
+
+  for (i in 1:n_dens) {
+    dens[, i] <- dnorm(x, mean = 0, sd = i)
+  }
+
+  colnames(dens) <- paste0("sd_", 1:n_dens)
+  dens <- as.data.frame(dens)
+  dens <- dplyr::mutate(dens, z_score = x)
+  dens <- tidyr::gather(dens, sd, obs, -z_score)
+  ggplot2::qplot(z_score, obs, data = dens, colour = sd, geom = "line") +
+    ggplot2::ylab("Density") +
+    ggplot2::xlab("Z Score") +
+    ggplot2::theme_bw()
+}
+
+
 
 #table_1_1 <- read.csv("~/Google Drive/Statistics with R Book/prod/01-chapter/table_1-1.csv", stringsAsFactors = FALSE)
 #table_1_4 <- read.csv("~/Google Drive/Statistics with R Book/prod/01-chapter/table_1-4.csv", stringsAsFactors = FALSE)
