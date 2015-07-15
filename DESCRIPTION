@@ -11,4 +11,6 @@ Description: TBD; More about what it does.
 License: MIT
 LazyData: TRUE
 Imports:
-    ggplot2
+    ggplot2,
+    dplyr,
+    tidyr
