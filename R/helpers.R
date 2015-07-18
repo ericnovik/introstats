@@ -43,12 +43,14 @@ plot_normals <- function (n_dens = 3) {
 #' @param pop Vector containing the population (anything over 10,000 will take a long time to run on most ocmputers)
 #' @param n Number of replicas of each sample
 #' @param size Vector containing sizes for each sampling distribution
+#' @param facets Set to TRUE if you want plot each distribution on a separate facet
 #' @return ggplot2 plot object
 #' @examples
 #' x <- runif(10000)
-#' plot_sampling_dist(x)
+#' plot_sampling_dist(x, facets = TRUE)
 #' plot_sampling_dist(x, n = 1e6, size = c(2, 10, 50, 100))
-plot_sampling_dist <- function (pop,   n = 1e5, size = c(2, 5, 30)) {
+plot_sampling_dist <- function (pop,   n = 1e5, size = c(2, 5, 30), facets = FALSE) {
+
   dens <- matrix(ncol = length(size), nrow = n)
 
   for (i in seq_along(size)) {
@@ -59,11 +61,16 @@ plot_sampling_dist <- function (pop,   n = 1e5, size = c(2, 5, 30)) {
   dens <- as.data.frame(dens)
   dens <- tidyr::gather(dens, size, obs)
 
-  ggplot2::qplot(obs, data = dens, fill = size, color = size,
-                 geom = "density", alpha = I(1/3)) +
+  p <- ggplot2::qplot(obs, data = dens, fill = size, color = size,
+                      geom = "density", alpha = I(1/3)) +
     ggplot2::ylab("Density") +
     ggplot2::xlab("") +
     ggplot2::theme_bw()
+  if (facets) {
+    p + ggplot2::facet_grid(size ~ ., scales = "free_y")
+  } else {
+    p
+  }
 }
 
 #table_1_1 <- read.csv("~/Google Drive/Statistics with R Book/prod/01-chapter/table_1-1.csv", stringsAsFactors = FALSE)
