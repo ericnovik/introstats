@@ -38,7 +38,33 @@ plot_normals <- function (n_dens = 3) {
     ggplot2::theme_bw()
 }
 
+#' Plots the distributions of the sample means from the population.
+#'
+#' @param pop Vector containing the population (anything over 10,000 will take a long time to run on most ocmputers)
+#' @param n Number of replicas of each sample
+#' @param size Vector containing sizes for each sampling distribution
+#' @return ggplot2 plot object
+#' @examples
+#' x <- runif(10000)
+#' plot_sampling_dist(x)
+#' plot_sampling_dist(x, n = 1e6, size = c(2, 10, 50, 100))
+plot_sampling_dist <- function (pop,   n = 1e5, size = c(2, 5, 30)) {
+  dens <- matrix(ncol = length(size), nrow = n)
 
+  for (i in seq_along(size)) {
+    dens[, i] <- replicate(n, mean(sample(pop, size = size[i])))
+  }
+
+  colnames(dens) <- paste0("n_", size)
+  dens <- as.data.frame(dens)
+  dens <- tidyr::gather(dens, size, obs)
+
+  ggplot2::qplot(obs, data = dens, fill = size, color = size,
+                 geom = "density", alpha = I(1/3)) +
+    ggplot2::ylab("Density") +
+    ggplot2::xlab("") +
+    ggplot2::theme_bw()
+}
 
 #table_1_1 <- read.csv("~/Google Drive/Statistics with R Book/prod/01-chapter/table_1-1.csv", stringsAsFactors = FALSE)
 #table_1_4 <- read.csv("~/Google Drive/Statistics with R Book/prod/01-chapter/table_1-4.csv", stringsAsFactors = FALSE)
