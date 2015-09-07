@@ -73,6 +73,27 @@ plot_sampling_dist <- function (pop,   n = 1e5, size = c(2, 5, 30), facets = FAL
   }
 }
 
+plot_hyper <- function (n_dens = 3) {
+  m <- 10
+  n <- 10
+  x <- 0:10
+
+  dens <- matrix(ncol = n_dens, nrow = length(x))
+
+  for (i in 1:n_dens) {
+    dens[, i] <- dhyper(x, m, n, k = n + 2 - i)
+  }
+
+  colnames(dens) <- paste0("k_", 1:n_dens)
+  dens <- as.data.frame(dens)
+  dens <- dplyr::mutate(dens, x = x)
+  dens <- tidyr::gather(dens, k, obs, -x)
+  ggplot2::qplot(x, obs, data = dens, colour = k, size = k, geom = c("line")) +
+    ggplot2::ylab("Probability") +
+    ggplot2::xlab("X") +
+    ggplot2::theme_bw()
+}
+
 #table_1_1 <- read.csv("~/Google Drive/Statistics with R Book/prod/01-chapter/table_1-1.csv", stringsAsFactors = FALSE)
 #table_1_4 <- read.csv("~/Google Drive/Statistics with R Book/prod/01-chapter/table_1-4.csv", stringsAsFactors = FALSE)
 #devtools::use_data(table_1_4, table_1_1)
@@ -90,3 +111,27 @@ plot_sampling_dist <- function (pop,   n = 1e5, size = c(2, 5, 30), facets = FAL
 # colnames(exit) <- 'obama'
 # exit$obama <- sample(exit$obama)
 # devtools::use_data(exit, overwrite = TRUE)
+
+#temps <- read.csv("~/Downloads/herearethedatasets/temps.csv", stringsAsFactors = FALSE)
+#devtools::use_data(temps)
+
+#hotel <- read.csv("~/Documents/Rfiles/hotel.csv", stringsAsFactors = FALSE)
+#devtools::use_data(hotel)
+
+# distract <- read.csv("~/Downloads/distract.csv", stringsAsFactors = FALSE)
+# distract$cellphone <- sample(distract$cellphone)
+# devtools::use_data(distract)
+#
+# elderly <- read.csv("~/Downloads/elderly.csv", stringsAsFactors = FALSE)
+# devtools::use_data(elderly)
+#
+# gasprice <- read.csv("~/Downloads/gasprice.csv", stringsAsFactors = FALSE)
+# devtools::use_data(gasprice)
+#
+# wine <- read.csv("~/Downloads/wine.csv", stringsAsFactors = FALSE)
+# devtools::use_data(wine)
+
+
+
+
+
