@@ -131,7 +131,13 @@ plot_hyper <- function (n_dens = 3) {
 # wine <- read.csv("~/Downloads/wine.csv", stringsAsFactors = FALSE)
 # devtools::use_data(wine)
 
-
-
+# jobs <- read.csv("~/Downloads/jobs.csv", stringsAsFactors = FALSE)
+# devtools::use_data(jobs)
+#
+# city <- read.csv("~/Downloads/citytemps.csv", stringsAsFactors = FALSE)
+# devtools::use_data(city)
+#
+# polling <- read.csv("~/Downloads/polling.csv", stringsAsFactors = FALSE)
+# devtools::use_data(polling)
 
 
