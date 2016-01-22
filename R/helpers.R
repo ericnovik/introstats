@@ -140,4 +140,8 @@ plot_hyper <- function (n_dens = 3) {
 # polling <- read.csv("~/Downloads/polling.csv", stringsAsFactors = FALSE)
 # devtools::use_data(polling)
 
-
+# top20 <- read.csv("~/Downloads/top20.csv", stringsAsFactors = FALSE)
+# devtools::use_data(top20)
+#
+# daily_idx_chg <- read.csv("~/Downloads/daily.index.chg.csv", stringsAsFactors = FALSE)
+# devtools::use_data(daily_idx_chg)
