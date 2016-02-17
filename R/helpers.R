@@ -145,3 +145,7 @@ plot_hyper <- function (n_dens = 3) {
 #
 # daily_idx_chg <- read.csv("~/Downloads/daily.index.chg.csv", stringsAsFactors = FALSE)
 # devtools::use_data(daily_idx_chg)
+
+#tv_hours <- read.csv("~/Downloads/tvhrs2.csv", stringsAsFactors = FALSE)
+#devtools::use_data(tv_hours, overwrite = TRUE)
+
