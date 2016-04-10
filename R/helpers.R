@@ -94,58 +94,8 @@ plot_hyper <- function (n_dens = 3) {
     ggplot2::theme_bw()
 }
 
-#table_1_1 <- read.csv("~/Google Drive/Statistics with R Book/prod/01-chapter/table_1-1.csv", stringsAsFactors = FALSE)
-#table_1_4 <- read.csv("~/Google Drive/Statistics with R Book/prod/01-chapter/table_1-4.csv", stringsAsFactors = FALSE)
-#devtools::use_data(table_1_4, table_1_1)
+#cad <- read.csv("~/Downloads/cad.csv", stringsAsFactors = FALSE)
+#devtools::use_data(cad, overwrite = TRUE)
 
-#tv_hours <- read.csv("~/Documents/Rfiles/tvhrs.csv", stringsAsFactors = FALSE)
-#devtools::use_data(tv_hours)
 
-#students <- read.csv("~/Documents/Rfiles/student.csv", stringsAsFactors = FALSE)
-#devtools::use_data(students)
-
-# poverty <- read.csv("~/Documents/Rfiles/USdata.csv", stringsAsFactors = FALSE)
-# devtools::use_data(poverty)
-
-# exit <- read.csv("~/Downloads/exit.csv", stringsAsFactors = FALSE)
-# colnames(exit) <- 'obama'
-# exit$obama <- sample(exit$obama)
-# devtools::use_data(exit, overwrite = TRUE)
-
-#temps <- read.csv("~/Downloads/herearethedatasets/temps.csv", stringsAsFactors = FALSE)
-#devtools::use_data(temps)
-
-#hotel <- read.csv("~/Documents/Rfiles/hotel.csv", stringsAsFactors = FALSE)
-#devtools::use_data(hotel)
-
-# distract <- read.csv("~/Downloads/distract.csv", stringsAsFactors = FALSE)
-# distract$cellphone <- sample(distract$cellphone)
-# devtools::use_data(distract)
-#
-# elderly <- read.csv("~/Downloads/elderly.csv", stringsAsFactors = FALSE)
-# devtools::use_data(elderly)
-#
-# gasprice <- read.csv("~/Downloads/gasprice.csv", stringsAsFactors = FALSE)
-# devtools::use_data(gasprice)
-#
-# wine <- read.csv("~/Downloads/wine.csv", stringsAsFactors = FALSE)
-# devtools::use_data(wine)
-
-# jobs <- read.csv("~/Downloads/jobs.csv", stringsAsFactors = FALSE)
-# devtools::use_data(jobs)
-#
-# city <- read.csv("~/Downloads/citytemps.csv", stringsAsFactors = FALSE)
-# devtools::use_data(city)
-#
-# polling <- read.csv("~/Downloads/polling.csv", stringsAsFactors = FALSE)
-# devtools::use_data(polling)
-
-# top20 <- read.csv("~/Downloads/top20.csv", stringsAsFactors = FALSE)
-# devtools::use_data(top20)
-#
-# daily_idx_chg <- read.csv("~/Downloads/daily.index.chg.csv", stringsAsFactors = FALSE)
-# devtools::use_data(daily_idx_chg)
-
-#tv_hours <- read.csv("~/Downloads/tvhrs2.csv", stringsAsFactors = FALSE)
-#devtools::use_data(tv_hours, overwrite = TRUE)
 
