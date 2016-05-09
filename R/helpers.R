@@ -94,8 +94,8 @@ plot_hyper <- function (n_dens = 3) {
     ggplot2::theme_bw()
 }
 
-#cad <- read.csv("~/Downloads/cad.csv", stringsAsFactors = FALSE)
-#devtools::use_data(cad, overwrite = TRUE)
+#winnipeg_apt <- read.csv("~/Downloads/winnipeg_apt.csv", stringsAsFactors = FALSE)
+#devtools::use_data(winnipeg_apt, overwrite = TRUE)
 
 
 
