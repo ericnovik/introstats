@@ -93,7 +93,3 @@ plot_hyper <- function (n_dens = 3) {
     ggplot2::xlab("X") +
     ggplot2::theme_bw()
 }
-
-#brisbane <- read.csv("~/Downloads/brisbane.csv", stringsAsFactors = FALSE)
-#devtools::use_data(brisbane, overwrite = TRUE)
-
